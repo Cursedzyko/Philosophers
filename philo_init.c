@@ -6,7 +6,7 @@
 /*   By: zyunusov <zyunusov@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 13:47:13 by zyunusov          #+#    #+#             */
-/*   Updated: 2022/11/21 15:11:56 by zyunusov         ###   ########.fr       */
+/*   Updated: 2022/11/22 13:43:57 by zyunusov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	init_philo(t_data *data)
 	}
 	check_death(data->philos);
 	i = 0;
-	while (i < data->nopi)//!data->die)
+	while (i < data->nopi && (!data->die || data->nfe != -1))
 	{
 		pthread_join(data->philos[i].ph, NULL);
 		i++;
