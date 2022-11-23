@@ -1,41 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo_utils.c                                      :+:      :+:    :+:   */
+/*   atoi.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zyunusov <zyunusov@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 23:12:19 by zyunusov          #+#    #+#             */
-/*   Updated: 2022/11/21 14:22:43 by zyunusov         ###   ########.fr       */
+/*   Created: 2022/11/22 23:50:40 by zyunusov          #+#    #+#             */
+/*   Updated: 2022/11/22 23:50:42 by zyunusov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-
-void	printstatus(t_philo *philo, char *s, int d)
-{
-	pthread_mutex_lock(&philo->data->mutex);
-	printf("%lld %d %s\n", get_time() - philo->data->current, philo->num, s);
-	if (d)
-		pthread_mutex_unlock(&philo->data->mutex);
-}
-
-void	ft_usleep(int time)
-{
-	long long	t;
-
-	t = get_time();
-	while (get_time() - t < time)
-		usleep(100);
-}
-
-long long	get_time(void)
-{
-	struct timeval	time;
-
-	gettimeofday(&time, NULL);
-	return ((time.tv_sec * 1000) + (time.tv_usec / 1000));
-}
 
 int	ft_atoi(const char *str)
 {
